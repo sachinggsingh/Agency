@@ -174,9 +174,9 @@ export function PlaceholdersAndVanishInput({
     vanishAndSubmit();
     
     // Open email client after animation
-    const emailSubject = "Let's Connect!";
+    const emailSubject = "Nice talking with StaluxSystems";
     const emailBody = value || "";
-    const mailtoLink = `mailto:staluxservices@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:staluxsystems@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
     
     // Open the mailto link after the vanish animation completes
     setTimeout(() => {
