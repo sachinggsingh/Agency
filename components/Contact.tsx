@@ -1,137 +1,112 @@
 "use client";
 
 import React from "react";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
+import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
 
 export function ContactSection() {
-  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+
+  const placeholders = [
+    "Tell us about your project...",
+    "Need a website or custom software?",
+    "Looking for UI/UX design?",
+    "Need video editing services?",
+  ];
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    console.log("submitted");
   };
 
   return (
     <section className="py-24 px-4 bg-background">
       <Container>
+
+        {/* HEADER */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50">
             Let's Build Something Great
           </h2>
+
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
             Ready to transform your vision into reality? Get in touch with our team.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <div className="shadow-input rounded-2xl bg-card border border-border p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              Send us a message
+        {/* CENTER STACK */}
+        <div className="max-w-2xl mx-auto space-y-8">
+
+          {/* FORM CARD */}
+          {/* <div className="shadow-input rounded-2xl bg-card border border-border p-8"> */}
+            <PlaceholdersAndVanishInput
+              placeholders={placeholders}
+              onChange={handleChange}
+              onSubmit={onSubmit}
+            />
+          {/* </div> */}
+
+          {/* CONTACT INFO CARD */}
+          {/* <div className="shadow-input rounded-2xl bg-card border border-border p-8">
+
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
+              Get in touch
             </h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid md:grid-cols-2 gap-4">
-                <LabelInputContainer>
-                  <Label htmlFor="firstname">First name</Label>
-                  <Input id="firstname" placeholder="John" type="text" required />
-                </LabelInputContainer>
-                <LabelInputContainer>
-                  <Label htmlFor="lastname">Last name</Label>
-                  <Input id="lastname" placeholder="Doe" type="text" required />
-                </LabelInputContainer>
-              </div>
+            <div className="space-y-6">
 
-              <LabelInputContainer>
-                <Label htmlFor="email">Email Address</Label>
-                <Input id="email" placeholder="john@company.com" type="email" required />
-              </LabelInputContainer>
+              <ContactInfo
+                icon={<IconMail size={20} />}
+                title="Email"
+                content="satluxservices@gmail.com"
+                href="mailto:satluxservices@gmail.com"
+              />
 
-              <LabelInputContainer>
-                <Label htmlFor="company">Company Name</Label>
-                <Input id="company" placeholder="Your Company" type="text" />
-              </LabelInputContainer>
+              <ContactInfo
+                icon={<IconPhone size={20} />}
+                title="Phone"
+                content="+91 9979068777"
+              />
 
-              <LabelInputContainer>
-                <Label htmlFor="message">Message</Label>
-                <textarea
-                  id="message"
-                  placeholder="Tell us about your project..."
-                  rows={5}
-                  required
-                  className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                />
-              </LabelInputContainer>
+              <ContactInfo
+                icon={<IconMapPin size={20} />}
+                title="Location"
+                content="Vadodara, Gujarat"
+              />
 
-              <button
-                className="group/btn relative block h-12 w-full rounded-lg bg-foreground text-background font-semibold text-base hover:opacity-90 transition-opacity shadow-lg"
-                type="submit"
-              >
-                Send Message
-                <BottomGradient />
-              </button>
-            </form>
+            </div>
+          </div> */}
+
+          {/* WHY CARD */}
+          <div className="shadow-input rounded-2xl bg-card border border-border p-8">
+
+            <h3 className="text-xl font-bold text-foreground mb-6 text-center">
+              Why work with us?
+            </h3>
+
+            <ul className="space-y-3 text-muted-foreground text-center">
+
+              <li>✓ Fast turnaround times</li>
+              <li>✓ Dedicated project manager</li>
+              <li>✓ Scalable solutions</li>
+              <li>✓ Ongoing support & maintenance</li>
+
+            </ul>
+
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="shadow-input rounded-2xl bg-card border border-border p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-6">
-                Get in touch
-              </h3>
-              
-              <div className="space-y-6">
-                <ContactInfo
-                  icon={<IconMail className="h-5 w-5" />}
-                  title="Email"
-                  content="hello@agency.com"
-                  href="mailto:hello@agency.com"
-                />
-                <ContactInfo
-                  icon={<IconPhone className="h-5 w-5" />}
-                  title="Phone"
-                  content="+1 (555) 123-4567"
-                  href="tel:+15551234567"
-                />
-                <ContactInfo
-                  icon={<IconMapPin className="h-5 w-5" />}
-                  title="Location"
-                  content="San Francisco, CA"
-                />
-              </div>
-            </div>
-
-            <div className="shadow-input rounded-2xl bg-card border border-border p-8">
-              <h3 className="text-xl font-bold text-foreground mb-4">
-                Why work with us?
-              </h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>Fast turnaround times</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>Dedicated project manager</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>Scalable solutions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>Ongoing support & maintenance</span>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
+
       </Container>
     </section>
   );
 }
+
+/* PERFECTLY ALIGNED CONTACT ITEM */
 
 const ContactInfo = ({
   icon,
@@ -144,48 +119,31 @@ const ContactInfo = ({
   content: string;
   href?: string;
 }) => {
-  const Content = (
-    <div className="flex items-start gap-4">
-      <div className="p-3 rounded-lg bg-primary/10 text-primary">
+
+  const Item = (
+    <div className="flex items-center gap-4 justify-center">
+
+      {/* ICON BOX */}
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
         {icon}
       </div>
-      <div>
-        <h4 className="font-semibold text-foreground mb-1">{title}</h4>
-        <p className="text-muted-foreground">{content}</p>
+
+      {/* TEXT */}
+      <div className="text-left">
+        <div className="font-semibold text-foreground">{title}</div>
+        <div className="text-muted-foreground text-sm">{content}</div>
       </div>
+
     </div>
   );
 
   if (href) {
     return (
-      <a href={href} className="block hover:opacity-80 transition-opacity">
-        {Content}
+      <a href={href} className="block hover:opacity-80 transition">
+        {Item}
       </a>
     );
   }
 
-  return Content;
-};
-
-const BottomGradient = () => {
-  return (
-    <>
-      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
-      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
-    </>
-  );
-};
-
-const LabelInputContainer = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("flex w-full flex-col space-y-2", className)}>
-      {children}
-    </div>
-  );
+  return Item;
 };

@@ -2,21 +2,24 @@
 
 import React from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { 
-  IconBrandNextjs, 
-  IconBrandNodejs, 
-  IconBrandGolang, 
-  IconBrandTypescript, 
-  IconBrandJavascript, 
-  IconBrandMongodb, 
-  IconBrandMysql, 
-  IconBrandDocker, 
-  IconDatabase,
-  IconBrandFramerMotion,
-  IconBrandCss3 as IconGsap,
-  IconBrandSupabase,
-  IconServer
-} from "@tabler/icons-react";
+
+import { SiGreensock, SiNextdotjs } from "react-icons/si";
+import { FaNode } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
+import { IoLogoJavascript } from "react-icons/io5";
+import { SiMongodb } from "react-icons/si";
+  import { SiMysql } from "react-icons/si";
+import { SiRedis } from "react-icons/si";
+import { RiSupabaseFill } from "react-icons/ri";
+import { SiDocker } from "react-icons/si";
+import { DiPostgresql } from "react-icons/di";
+import { PiFramerLogoFill } from "react-icons/pi";
+
+import { SiExpress } from "react-icons/si";
+
+import { FaGolang } from "react-icons/fa6";
+
+
 import { Container } from "@/components/ui/container";
 
 import { motion } from "framer-motion";
@@ -59,58 +62,58 @@ export function TechStack() {
 const techStack = [
   {
     name: "Next.js",
-    icon: <IconBrandNextjs className="w-12 h-12 text-black dark:text-white" />,
+    icon: <SiNextdotjs className="w-12 h-12 text-black dark:text-white" />,
   },
   {
     name: "Node.js",
-    icon: <IconBrandNodejs className="w-12 h-12 text-[#339933]" />,
+    icon: <FaNode className="w-12 h-12 text-[#339933]" />,
   },
   {
     name: "Golang",
-    icon: <IconBrandGolang className="w-12 h-12 text-[#00ADD8]" />,
+    icon: <FaGolang className="w-12 h-12 text-[#00ADD8]" />,
   },
   {
     name: "TypeScript",
-    icon: <IconBrandTypescript className="w-12 h-12 text-[#3178C6]" />,
+    icon: <SiTypescript className="w-12 h-12 text-[#3178C6]" />,
   },
   {
     name: "JavaScript",
-    icon: <IconBrandJavascript className="w-12 h-12 text-[#F7DF1E]" />,
+    icon: <IoLogoJavascript  className="w-12 h-12 text-[#F7DF1E]" />,
   },
   {
     name: "Framer Motion",
-    icon: <IconBrandFramerMotion className="w-12 h-12 text-black dark:text-white" />,
+    icon: <PiFramerLogoFill className="w-12 h-12 text-black dark:text-white" />,
   },
   {
     name: "GSAP",
-    icon: <IconGsap className="w-12 h-12 text-[#88CE02]" />,
+    icon: <SiGreensock className="w-12 h-12 text-[#88CE02]" />,
   },
   {
     name: "Express.js",
-    icon: <IconServer className="w-12 h-12 text-black dark:text-white" />,
+    icon: <SiExpress className="w-12 h-12 text-black dark:text-white" />,
   },
   {
     name: "MongoDB",
-    icon: <IconBrandMongodb className="w-12 h-12 text-[#47A248]" />,
+    icon: <SiMongodb className="w-12 h-12 text-[#47A248]" />,
   },
   {
     name: "MySQL",
-    icon: <IconBrandMysql className="w-12 h-12 text-[#00758F]" />,
+    icon: <SiMysql className="w-12 h-12 text-[#00758F]" />,
   },
   {
     name: "Redis",
-    icon: <IconDatabase className="w-12 h-12 text-[#DC382D]" />,
+    icon: <SiRedis className="w-12 h-12 text-[#DC382D]" />,
   },
   {
     name: "PostgreSQL",
-    icon: <IconDatabase className="w-12 h-12 text-[#336791]" />,
+    icon: <DiPostgresql className="w-12 h-12 text-[#336791]" />,
   },
   {
     name: "Supabase",
-    icon: <IconBrandSupabase className="w-12 h-12 text-[#3ECF8E]" />,
+    icon: <RiSupabaseFill className="w-12 h-12 text-[#3ECF8E]" />,
   },
   {
     name: "Docker",
-    icon: <IconBrandDocker className="w-12 h-12 text-[#2496ED]" />,
+    icon: <SiDocker className="w-12 h-12 text-[#2496ED]" />,
   },
 ];

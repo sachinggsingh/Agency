@@ -18,7 +18,8 @@ const Skiper19 = () => {
         className="relative mx-auto flex h-[350vh] sm:h-[450vh] md:h-[350vh] xl:h-[500vh] w-full max-w-full flex-col items-center overflow-x-hidden overflow-y-visible bg-background px-4 text-foreground font-jakarta"
       >
         {/* Stroke SVG – visible on all viewports, scroll-driven; completes when section end hits viewport top */}
-        <div className="absolute inset-0 z-0 w-full min-h-0 pointer-events-none overflow-visible">
+        <div className="absolute inset-0 z-0 w-full pointer-events-none overflow-hidden">
+
           <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[180%] sm:w-[130%] md:w-[120%] lg:w-full max-w-[1400px] h-full min-h-[100vh] opacity-60 sm:opacity-80 lg:opacity-100">
             <LinePath
               className="w-full h-full object-contain object-left-top scale-x-[-1]"

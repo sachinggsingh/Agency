@@ -1,7 +1,7 @@
 "use client";
 
 import { MotionValue, motion, useScroll, useTransform } from "motion/react";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Highlighter } from "./ui/highlighter";
 
 export function Hero() {
@@ -45,7 +45,7 @@ export function Hero() {
 
         <div className="absolute -right-[20%] sm:-right-[10%] -top-[0%] sm:-top-[5%] z-0 w-[140%] sm:w-[120%] lg:w-full max-w-[1400px] h-[70vh] sm:h-auto pointer-events-none opacity-40 sm:opacity-50 lg:opacity-100 min-h-[350px]">
           <LinePath
-            className="md:mt-48 w-full h-full object-contain object-left-top"
+            className="md:mt-72  w-full h-full object-contain object-left-top"
             scrollYProgress={scrollYProgress}
           />
         </div>

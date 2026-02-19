@@ -17,7 +17,7 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "What services does DevStudio offer?",
+    question: "What services does Stalux offer?",
     answer:
       "We specialize in high-performance web applications, strategic brand identity, custom AI integrations, and scalable cloud infrastructure. From initial design to final deployment, we provide a full-cycle development experience tailored to your business goals.",
   },
@@ -72,14 +72,14 @@ export default function FAQ(): JSX.Element {
 
           {/* Right side */}
           <div className="space-y-4">
-            <Accordion type="single" collapsible className="w-full space-y-3">
+            <Accordion type="single" collapsible className=" w-full space-y-3">
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={faq.question}
                   value={`item-${index}`}
                   className="border-none rounded-2xl px-6 bg-foreground/5 transition-all duration-300 group overflow-hidden mb-4 hover:shadow-[0_10px_20px_rgba(66,122,118,0.05)]"
                 >
-                  <AccordionTrigger className="text-left text-base sm:text-xl lg:text-2xl font-bold py-4 sm:py-6 hover:no-underline transition-all group-hover:text-primary">
+                  <AccordionTrigger className="cursor-pointer text-left text-base sm:text-xl lg:text-2xl font-bold py-4 sm:py-6 hover:no-underline transition-all group-hover:text-primary">
                     {faq.question}
                   </AccordionTrigger>
 
