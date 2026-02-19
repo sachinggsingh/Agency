@@ -15,7 +15,7 @@ const Skiper19 = () => {
     <>
       <section
         ref={ref}
-        className="relative mx-auto flex h-[350vh] sm:h-[450vh] md:h-[350vh] xl:h-[500vh] w-full max-w-full flex-col items-center overflow-x-hidden overflow-y-visible bg-background px-4 text-foreground font-jakarta"
+        className="relative mx-auto flex sm:h-[450vh] md:h-[350vh] xl:h-[500vh] w-full max-w-full flex-col items-center overflow-x-hidden overflow-y-visible bg-background px-4 text-foreground font-jakarta"
       >
         {/* Stroke SVG – visible on all viewports, scroll-driven; completes when section end hits viewport top */}
         <div className="absolute inset-0 z-0 w-full pointer-events-none overflow-hidden">
@@ -76,3 +76,5 @@ const LinePath = ({
     </svg>
   );
 };
+
+

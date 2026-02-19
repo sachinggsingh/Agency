@@ -14,13 +14,13 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative mx-auto flex h-[140vh] sm:h-[220vh] md:h-[350vh] w-full flex-col items-center overflow-x-hidden bg-background px-4 text-foreground font-jakarta"
+      className="relative mx-auto flex sm:h-[220vh] md:h-[350vh] w-full flex-col items-center overflow-x-hidden bg-background px-4 text-foreground font-jakarta"
     >
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-[38px] sm:mt-32 md:mt-24 relative flex w-full max-w-4xl flex-col items-center justify-center gap-4 sm:gap-6 text-center z-10"
+        className="mt-[250px] sm:mt-32 md:mt-24 relative flex w-full max-w-4xl flex-col items-center justify-center gap-4 sm:gap-6 text-center z-10"
       >
         <h1 className="relative z-10 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold tracking-tighter leading-[1.1] px-1">
           Modern Digital

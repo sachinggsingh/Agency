@@ -1,7 +1,67 @@
+// import type { Metadata } from "next";
+// import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+// import "./globals.css";
+// import { ThemeProvider } from "@/components/theme-provider"
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+// const jakarta = Plus_Jakarta_Sans({
+//   variable: "--font-jakarta",
+//   subsets: ["latin"],
+// });
+
+// export const metadata: Metadata = {
+//   title: "Stalux",
+//   description: "",
+// };
+
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+//   return (
+//       <html lang="en" suppressHydrationWarning>
+//       <body
+//         className={`${geistSans.variable} ${geistMono.variable} ${jakarta.variable} antialiased`}
+//       >
+//               <ThemeProvider
+//             attribute="class"
+//             defaultTheme="system"
+//             enableSystem
+//             disableTransitionOnChange
+//           >
+//             <div className="relative min-h-screen bg-background selection:bg-primary/30 selection:text-foreground">
+//               {/* global decorative gradient blobs */}
+//               <div className="pointer-events-none fixed -top-48 -left-48 w-[800px] h-[800px] bg-primary/20 blur-[150px] rounded-full z-0" />
+//               <div className="pointer-events-none fixed -bottom-48 -right-48 w-[800px] h-[800px] bg-purple-500/10 blur-[150px] rounded-full z-0" />
+              
+//               <div className="relative z-10">
+//                 {children}
+//               </div>
+//             </div>
+//           </ThemeProvider>
+
+//       </body>
+//     </html>
+//   );
+// }
+
+
+
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,31 +85,53 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-      <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jakarta.variable} antialiased`}
       >
-              <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="relative min-h-screen bg-background selection:bg-primary/30 selection:text-foreground">
-              {/* global decorative gradient blobs */}
-              <div className="pointer-events-none fixed -top-48 -left-48 w-[800px] h-[800px] bg-primary/20 blur-[150px] rounded-full z-0" />
-              <div className="pointer-events-none fixed -bottom-48 -right-48 w-[800px] h-[800px] bg-purple-500/10 blur-[150px] rounded-full z-0" />
-              
-              <div className="relative z-10">
-                {children}
-              </div>
-            </div>
-          </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* MAIN PAGE WRAPPER */}
+          <div className="relative min-h-dvh overflow-x-hidden bg-background selection:bg-primary/30 selection:text-foreground">
 
+            {/* ===== Decorative gradient blobs (mobile-safe) ===== */}
+            
+            <div className="
+              pointer-events-none fixed 
+              -top-40 -left-40
+              w-[450px] h-[450px]
+              md:w-[800px] md:h-[800px]
+              bg-primary/20
+              blur-[150px]
+              rounded-full
+              z-0
+            " />
+
+            <div className="
+              pointer-events-none fixed 
+              -bottom-40 -right-40
+              w-[450px] h-[450px]
+              md:w-[800px] md:h-[800px]
+              bg-purple-500/10
+              blur-[150px]
+              rounded-full
+              z-0
+            " />
+
+            <div className="relative z-10">
+              {children}
+            </div>
+
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
